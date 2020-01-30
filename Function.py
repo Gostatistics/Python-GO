@@ -30,4 +30,4 @@ def null_report(df):
   nrow = dfp.shape[0]
   print('Total entry count: ',nrow)
   for i in cols:
-    print('Missing value count for ', i, ': ',  nrow - dfp[i].apply(lambda l: isnull(l)).sum())
+    print('Missing value count for ', i, ': ',  dfp[i].apply(lambda l: isnull(l)).sum())
