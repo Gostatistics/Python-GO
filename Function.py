@@ -31,3 +31,11 @@ def null_report(df):
   print('Total entry count: ',nrow)
   for i in cols:
     print('Missing value count for ', i, ': ',  dfp[i].apply(lambda l: isnull(l)).sum())
+
+### Reorder strings in the format to be used as keys
+def sorted_title(x):
+  x = x.split(' (')[0]
+  xl = re.split('\W', x.lower())
+  xl = sorted(xl)
+  xj = ''.join(xl)
+  return xj
