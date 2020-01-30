@@ -27,6 +27,7 @@ def null_report(df):
   dfp = df
   if isinistance(df, DataFrame): dfp = df.toPandas()
   cols = dfp.columns
-  nrow = dfp.shape[0]  
+  nrow = dfp.shape[0]
+  print('Total entry count: ',nrow)
   for i in cols:
-    print('Missing value count for ', i, ': ',  nrow - dfp[i].apply(lambda l: isnull(l)).notnull().sum())
+    print('Missing value count for ', i, ': ',  nrow - dfp[i].apply(lambda l: isnull(l)).sum())
